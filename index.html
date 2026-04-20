@@ -1,23 +1,434 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+   <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "KT 인터넷 재약정 시 현금 지원을 받을 수 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "KT 재약정은 신규 가입에 비해 사은품이나 현금 지원 규모가 적은 것이 일반적입니다. 하지만 재약정 시점의 정책에 따라 일부 현금 지원이나 상품권을 받을 수 있습니다. 2026년 현재 KT는 모바일 결합 상품을 유지하는 고객에게 다양한 재약정 혜택을 제공하며, 전문 비교 업체에서는 최대 현금 지원금을 제시하기도 합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "KT 재약정과 신규 가입의 차이점은 무엇인가요?",
+              "@id": "#신규재약정차이점",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "신규 가입은 통신사를 새로 이용하는 고객에게 주어지는 혜택으로, 일반적으로 재약정보다 더 많은 현금 지원금과 사은품을 받을 수 있습니다. 재약정은 기존 고객이 계약을 연장하는 것으로, 할인 혜택이나 요금제를 유지하는 데 중점을 둡니다. 신규 가입은 약정 기간 동안의 총 비용을 고려했을 때 유리할 수 있지만, 번거로운 통신사 이동 과정이 단점입니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "KT 재약정 시 할인을 최대로 받는 방법이 있나요?",
+              "@id": "#할인팁-답변",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "KT 재약정 시 할인을 최대로 받으려면 모바일 결합 할인(프리미엄 가족 결합 등)을 유지하고, 필요 없는 부가 서비스는 해지하는 것이 좋습니다. 또한, 재약정 기간을 3년으로 설정하거나 기가 인터넷 등 고가 요금제를 선택하면 할인율이 높아집니다. 2026년에는 AI 기반의 TV 요금제도 할인 대상에 포함되는 경우가 많습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "재약정 기간 만료 전에 계약 해지 시 위약금이 발생하나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "네, 재약정 기간 만료 전에 해지할 경우 약정 기간에 비례하는 위약금이 발생합니다. 이 위약금은 재약정 시 받은 사은품이나 할인 금액에 따라 달라지며, 계약서에 명시된 기준을 따릅니다. 따라서 재약정 시에는 본인의 장기적인 이용 계획을 고려하여 신중하게 결정해야 합니다."
+              }
+            }
+          ]
+        }
+        </script>
+
+        <!-- CSS Styling -->
+        <style>
+            /* CSS Variables */
+            :root {
+                --primary-color: #0077c8; /* KT Blue */
+                --secondary-color: #e6eef4; /* Light Blue Background */
+                --accent-color: #ff5722; /* Orange Accent for CTA/Highlight */
+                --text-color: #333333;
+                --header-bg: #ffffff;
+                --footer-bg: #1a1a1a;
+                --section-bg-light: #f7f9fc;
+                --border-color: #e0e0e0;
+            }
+
+            /* Font Import */
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+            /* Base Styles */
+            body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background-color: var(--section-bg-light); color: var(--text-color); line-height: 1.8; font-size: 16px; }
+            .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+
+            /* Header */
+            header { background-color: var(--header-bg); border-bottom: 2px solid var(--border-color); }
+            header .container { display: flex; justify-content: space-between; align-items: center; padding: 20px; }
+            header h1 { margin: 0; font-size: 2.5em; color: var(--primary-color); font-weight: 900; }
+            header h1 a { text-decoration: none; color: inherit; }
+
+            /* Navigation (for desktop) */
+            nav ul { list-style: none; padding: 0; margin: 0; display: flex; }
+            nav ul li { margin-left: 25px; }
+            nav ul li a { text-decoration: none; color: var(--text-color); font-weight: 500; font-size: 1.1em; transition: color 0.3s; }
+            nav ul li a:hover { color: var(--primary-color); }
+
+            /* Hero Section */
+            .hero { background-image: linear-gradient(135deg, var(--primary-color) 0%, #00a0e9 100%); color: #fff; text-align: center; padding: 80px 20px; position: relative; overflow: hidden; }
+            .hero .container { display: flex; flex-direction: column; align-items: center; }
+            .hero h1 { font-size: 3.2em; margin-bottom: 15px; font-weight: 900; line-height: 1.3; }
+            .hero p { font-size: 1.3em; margin-bottom: 30px; font-weight: 300; max-width: 800px; }
+            .hero .highlight { color: #ffe082; font-weight: 700; }
+
+            /* CTA Button */
+            .cta-btn { background-color: var(--accent-color); color: #fff; padding: 16px 35px; font-size: 1.2em; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; transition: background-color 0.3s, transform 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.2); text-decoration: none; display: inline-block; }
+            .cta-btn:hover { background-color: #e64a19; transform: translateY(-3px); }
+
+            /* Main Content Structure */
+            main { background-color: #fff; padding-bottom: 40px; }
+            .content-section { padding: 60px 0; border-bottom: 1px solid var(--border-color); }
+            .content-section:last-child { border-bottom: none; }
+            .content-section h2 { font-size: 2.2em; color: var(--primary-color); text-align: center; margin-bottom: 40px; font-weight: 700; line-height: 1.4; }
+            .content-section h3 { font-size: 1.7em; color: var(--text-color); margin-top: 30px; margin-bottom: 15px; border-left: 4px solid var(--primary-color); padding-left: 15px; }
+            .content-section p { margin-bottom: 20px; font-weight: 400; color: #444; }
+            .content-section strong { font-weight: 700; color: var(--primary-color); }
+            .content-section ul { list-style: none; padding-left: 20px; margin-bottom: 20px; }
+            .content-section li { padding: 10px 0; position: relative; }
+            .content-section li::before { content: '✓'; color: var(--accent-color); font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; }
+
+            /* Comparison Table */
+            .comparison-table { width: 100%; border-collapse: collapse; margin-top: 20px; table-layout: fixed; }
+            .comparison-table th, .comparison-table td { border: 1px solid var(--border-color); padding: 15px; text-align: center; font-size: 0.95em; }
+            .comparison-table th { background-color: var(--primary-color); color: #fff; font-weight: 700; }
+            .comparison-table tr:nth-child(even) { background-color: var(--secondary-color); }
+            .comparison-table td strong { color: var(--accent-color); }
+
+            /* Interactive Elements (Forms and Calculators) */
+            .comparison-form-box { background-color: #ffffff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-top: 30px; border: 1px solid var(--border-color); }
+            .comparison-form-box h2 { color: var(--primary-color); text-align: center; margin-bottom: 25px; font-size: 2em; }
+            .comparison-form-box p { text-align: center; color: #666; font-size: 1.1em; }
+            .comparison-form-box label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-color); font-size: 1.05em; }
+            .comparison-form-box input[type="text"],
+            .comparison-form-box input[type="tel"],
+            .comparison-form-box input[type="number"],
+            .comparison-form-box input[type="date"],
+            .comparison-form-box select { width: 100%; padding: 14px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; font-size: 1em; }
+            .comparison-form-box .form-group { margin-bottom: 25px; }
+
+            /* FAQ Section (Accordion) */
+            .faq-item { background-color: #fff; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
+            .faq-item h3 { cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: var(--secondary-color); margin: 0; font-weight: 700; color: var(--primary-color); }
+            .faq-item h3::after { content: '▶'; font-size: 0.8em; color: var(--primary-color); transition: transform 0.3s; }
+            .faq-item.active h3::after { transform: rotate(90deg); }
+            .faq-item p { display: none; padding: 20px; color: #555; background-color: #fff; }
+            .faq-item.active p { display: block; }
+
+            /* Related Keywords and Navigation */
+            .keyword-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+            .keyword-list li { background-color: var(--secondary-color); color: var(--primary-color); padding: 10px 20px; margin: 5px; border-radius: 20px; font-weight: 500; border: 1px solid var(--primary-color); transition: background-color 0.3s; font-size: 0.9em; }
+            .keyword-list li:hover { background-color: #EAEAEA; }
+            .link-source { font-size: 0.9em; color: var(--secondary-color); text-decoration: none; display: block; margin-top: 5px; }
+
+            /* Footer */
+            footer { background-color: var(--footer-bg); color: #ccc; text-align: center; padding: 40px 20px; font-size: 0.9em; line-height: 1.6; }
+            footer a { color: #ccc; text-decoration: none; margin: 0 10px; transition: color 0.3s; }
+            footer a:hover { color: #fff; text-decoration: underline; }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                header .container { flex-direction: column; text-align: center; }
+                nav ul { margin-top: 15px; justify-content: center; }
+                nav ul li { margin: 0 10px; }
+                .hero h1 { font-size: 2.5em; }
+                .hero p { font-size: 1.1em; }
+                .cta-btn { padding: 14px 25px; font-size: 1.1em; }
+                .content-section h2 { font-size: 1.8em; margin-bottom: 30px; }
+                .content-section h3 { font-size: 1.4em; }
+                .comparison-form-box { padding: 25px; }
+                .comparison-table th, .comparison-table td { font-size: 0.8em; padding: 10px; }
+                .keyword-list li { font-size: 0.8em; padding: 8px 15px; }
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <div class="container">
+                <h1><a href="/">KT 인터넷TV 재약정 전문가이드</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="#재약정가이드">재약정 가이드</a></li>
+                        <li><a href="#혜택비교">혜택 및 가격 비교</a></li>
+                        <li><a href="#절약팁">할인 팁</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section: 핵심 키워드 강조 및 CTA -->
+            <section class="hero">
+                <div class="container">
+                    <h1>2026년 <span class="highlight">KT 인터넷TV 재약정</span>, <br class="pc-only">최대 현금 지원 혜택을 찾아드립니다!</h1>
+                    <p>복잡한 재약정 vs. 신규 가입 혜택 비교, 숨겨진 할인 요소를 파악하고 <br class="pc-only">가장 저렴한 가격으로 재약정하는 방법을 지금 확인하세요.</p>
+                    <a href="#quote-form-section" class="cta-btn">재약정 현금 지원금 견적 받기</a>
+                </div>
+            </section>
+
+            <!-- Main Content Section 1: 재약정의 기본 원리 및 2026년 정책 -->
+            <section id="재약정가이드" class="content-section">
+                <div class="container">
+                    <h2>KT 인터넷TV 재약정, 현명한 선택을 위한 첫걸음</h2>
+                    <p>KT 인터넷 및 TV를 오랫동안 이용해 오신 고객님이라면 약정 만료 시점이 다가올 때마다 재약정을 해야 할지, 아니면 다른 통신사로 <span class="highlight">신규 가입</span>을 해야 할지 고민하게 됩니다. 2026년 현재 통신 시장은 SKT, LG U+와의 치열한 경쟁 속에서 고객 유지(재약정)와 신규 유치(신규 가입) 전략을 동시에 펼치고 있습니다. 특히 재약정 시에는 현금 지원금과 사은품 규모가 신규 가입에 비해 상대적으로 적다는 인식이 있지만, 통신사별 정책과 결합 상품 할인율을 꼼꼼히 비교하면 재약정으로도 충분히 큰 혜택을 누릴 수 있습니다.</p>
+
+                    <h3 id="약정만료">재약정 약정 기간 만료 시점 확인하기</h3>
+                    <p>KT 인터넷 재약정은 보통 3년 약정 단위로 이루어집니다. 약정 만료 시점이 되면 KT에서 재약정 안내 문자가 오거나 고객센터를 통해 확인이 가능합니다. 이 시점이 되면 기존 요금제 유지, 새로운 요금제 변경, 그리고 통신사 이동을 선택할 수 있습니다. 2026년 기준으로 KT는 기존 고객 유지를 위해 <span class="highlight">모바일 결합 상품</span>(예: KT 프리미엄 가족 결합) 이용 고객에게 더 높은 재약정 혜택을 제공하는 경향이 있습니다. 재약정 시점을 놓치면 할인 혜택이 사라지고 요금이 할증될 수 있으므로 주의해야 합니다.</p>
+
+                    <h3 id="재약정혜택">KT 재약정 혜택의 종류: 현금 지원금 vs. 상품권</h3>
+                    <p>KT 재약정 혜택은 크게 두 가지로 나뉩니다. 첫째는 <strong>현금 지원금</strong>, 둘째는 <strong>상품권</strong>(KT Shop 상품권, 백화점 상품권 등)입니다. 신규 가입의 경우 현금 지원금이 높지만, 재약정은 고객별 이용 패턴과 결합 상품에 따라 지원 규모가 다릅니다. 재약정 전문 업체에서는 KT 본사 정책에 더해 추가적인 현금 지원금이나 사은품을 제공하는 경우가 많습니다. <span class="highlight">최대 지원금</span>을 원한다면 단순히 본사 고객센터만 문의할 것이 아니라, 여러 전문 업체들의 견적을 비교하는 것이 필수적입니다.</p>
+
+                    <p><strong>주요 키워드 활용:</strong></p>
+                    <ul>
+                        <li><span class="highlight">KT 인터넷 재약정</span>은 KT 본사 고객센터, KT Shop, 또는 온라인 <span class="highlight">전문 업체</span>를 통해 진행할 수 있습니다.</li>
+                        <li><span class="highlight">재약정 혜택</span>은 <span class="highlight">신규 가입</span> 혜택과는 다르게 <span class="highlight">현금 지원금</span> 외에 <span class="highlight">할인</span>율 조정에 중점을 둡니다.</li>
+                        <li><span class="highlight">2026년 기준</span>, KT는 <span class="highlight">AI 기반</span> TV 서비스나 기가 인터넷을 결합하는 고객에게 <span class="highlight">추가 할인</span>을 제공합니다.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Main Content Section 2: 신규 가입 vs. 재약정 비교 및 가격 분석 -->
+            <section id="혜택비교" class="content-section" style="background-color: var(--section-bg-light);">
+                <div class="container">
+                    <h2>신규 가입 vs. 재약정: 무엇이 더 이득일까요?</h2>
+                    <p>많은 소비자들이 신규 가입 시 제공되는 막대한 <span class="highlight">현금 사은품</span> 때문에 통신사 이동을 고려합니다. 하지만 신규 가입이 무조건 유리한 것은 아닙니다. 기존에 이용하던 KT 모바일 요금제와 결합되어 있던 할인 혜택, <span class="highlight">장기 고객 할인</span> 등을 포기해야 하는 경우가 많습니다. 아래 표를 통해 신규 가입과 재약정의 장단점을 명확히 비교해 보겠습니다.</p>
+
+                    <h3 id="비교테이블">KT 재약정과 신규 가입 혜택 비교표 (2026년 기준)</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>KT 인터넷TV 재약정</th>
+                                <th>KT/타사 신규 가입</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>현금 사은품/지원금</strong></td>
+                                <td>상대적으로 적거나 없음 (최대 10~20만 원 수준)</td>
+                                <td><strong>상대적으로 높음 (30~50만 원 이상)</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>모바일 결합 유지 여부</strong></td>
+                                <td>유지 가능, 결합 할인 계속 적용 (장점)</td>
+                                <td>해당 통신사 모바일 결합 시 혜택 적용 (단점: 기존 결합 해지 필요)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>설치 비용 및 절차</strong></td>
+                                <td>설치 기사 방문 없이 온라인 처리 가능 (편의성 높음)</td>
+                                <td>신규 설치 필요, 기사 방문 일정 조율 필요 (번거로움)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>장기 고객 할인 혜택</strong></td>
+                                <td>유지 가능 또는 추가 할인 적용</td>
+                                <td>초기화됨</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="small-info"><em>* 위 표는 일반적인 예시이며, 실제 혜택은 요금제와 가입 시점에 따라 달라질 수 있습니다.</em></p>
+
+                    <h3 id="통신사비교">KT vs. SKT vs. LG U+ 재약정 비교</h3>
+                    <p>KT 재약정을 고민할 때, SKT나 LG U+의 신규 가입 혜택도 함께 고려하는 것이 일반적입니다. <span class="highlight">SKT 재약정</span>은 SKT 모바일 사용자에게, <span class="highlight">LG U+ 재약정</span>은 LG U+ 모바일 사용자에게 유리합니다. 2026년 현재 통신사들은 AI 기반 서비스(KT AI TV, SKT NUGU, LG U+ AI 스피커 등)를 강화하고 있으며, 이러한 AI 상품을 함께 재약정할 때 추가 할인율을 제공하는 정책을 펴고 있습니다. <span class="highlight">전국 지역별</span> <span class="highlight">전문 업체</span> <span class="highlight">비교</span>를 통해 <span class="highlight">가장 저렴한 곳</span>을 찾는 것이 중요합니다.</p>
+                </div>
+            </section>
+
+            <!-- Main Content Section 3: 할인 팁 및 지역별 가격 차이 (SEO 심화) -->
+            <section id="절약팁" class="content-section">
+                <div class="container">
+                    <h2>KT 인터넷 재약정 현금 지원금 최대화하는 팁</h2>
+                    <p>KT 재약정 시 현금 지원금이나 사은품을 많이 받는 방법은 무엇일까요? 재약정 고객을 위한 <span class="highlight">숨겨진 할인</span> 팁과 <span class="highlight">최대 혜택</span>을 받는 전략을 공개합니다. 단순히 고객센터에서 안내하는 내용만 듣지 말고, 아래 팁을 활용하여 <span class="highlight">내돈내산</span> 후기처럼 꼼꼼하게 따져보세요.</p>
+
+                    <h3 id="모바일결합">모바일 결합 상품을 유지하라</h3>
+                    <p>KT의 가장 강력한 할인 수단은 <span class="highlight">프리미엄 가족 결합</span>이나 <span class="highlight">총액 결합 할인</span>입니다. KT 모바일 요금제와 인터넷을 결합하면 최대 50%까지 할인받을 수 있습니다. 재약정 시에도 이 할인을 유지하는 것이 가장 큰 이득입니다. 만약 모바일 결합 상품을 해지하고 타사로 이동하면 이 할인 혜택을 잃게 됩니다. 따라서 <span class="highlight">재약정 할인율</span>을 계산할 때 이 결합 할인을 포함하여 총 <span class="highlight">예상 비용</span>을 계산하는 것이 중요합니다.</p>
+
+                    <h3 id="지역별차이">지역별 재약정 혜택 차이점: 서울, 부산, 대구 등</h3>
+                    <p>신기하게도 인터넷 재약정 <span class="highlight">현금 지원금</span>은 <span class="highlight">지역별</span>로 차이가 발생합니다. <span class="highlight">서울</span> <span class="highlight">강남</span> 지역의 <span class="highlight">전문 업체</span>와 <span class="highlight">부산</span> <span class="highlight">해운대</span> 지역의 <span class="highlight">전문 업체</span> 간에 경쟁 심화로 인한 <span class="highlight">가격</span> 차이가 존재합니다. <span class="highlight">대구</span>, <span class="highlight">인천</span>, <span class="highlight">광주</span> 등 <span class="highlight">광역시</span>에서는 경쟁이 치열하여 <span class="highlight">평균</span>보다 높은 <span class="highlight">사은품</span>을 기대할 수 있습니다. 반면, <span class="highlight">제주</span> <span class="highlight">도서 산간</span> 지역은 상대적으로 <span class="highlight">업체</span> 수가 적어 <span class="highlight">현금지원</span> 규모가 적을 수 있습니다. 따라서 <span class="highlight">KT 재약정</span> <span class="highlight">견적</span>을 받을 때 <span class="highlight">전국 비교</span>가 가능한 <span class="highlight">비교 사이트</span>를 이용하는 것이 유리합니다.</p>
+
+                    <h3 id="추가할인">추가 할인: TMAP 운전점수, 제휴 카드 할인, AI 기가 지니</h3>
+                    <p>2026년에는 <span class="highlight">AI 기반</span> 서비스가 강조되고 있습니다. KT는 AI 스피커인 <span class="highlight">기가 지니</span>를 통해 다양한 <span class="highlight">할인 혜택</span>을 제공합니다. 또한, <span class="highlight">KT 제휴 신용카드</span>를 사용하면 통신료를 추가로 <span class="highlight">할인</span>받을 수 있습니다. SKT의 <span class="highlight">티맵</span> <span class="highlight">운전 점수</span> 할인처럼, KT도 안전운전 습관을 가진 운전자에게 추가 할인을 제공하는 <span class="highlight">이벤트</span>를 진행하는 경우가 있으니 꼼꼼하게 확인하세요. <span class="highlight">네이버</span>, <span class="highlight">구글</span> 검색을 통해 최신 <span class="highlight">할인 정보</span>를 확인하는 것이 중요합니다.</p>
+                </div>
+            </section>
+
+            <!-- Main Content Section 4: 세부 키워드 분석 및 견적 요청 폼 -->
+            <section id="quote-form-section" class="content-section" style="background-color: var(--secondary-color);">
+                <div class="container">
+                    <h2>나에게 맞는 KT 재약정 <span class="highlight">현금 지원금</span> 견적 분석 서비스</h2>
+                    <p>재약정과 신규 가입 중 어떤 선택이 유리할까요? 2026년 현재 전국 <span class="highlight">평균</span> <span class="highlight">가격</span>을 기준으로 <span class="highlight">내돈내산</span> 후기처럼 꼼꼼하게 비교 분석해 드립니다. <span class="highlight">서울</span>, <span class="highlight">인천</span>, <span class="highlight">부산</span>, <span class="highlight">대구</span>, <span class="highlight">대전</span> 등 전국 어디든 <span class="highlight">최저가 견적</span>을 찾아드립니다.</p>
+                    <div class="comparison-form-box">
+                        <form action="#" method="post">
+                            <h3 style="text-align: center; color: var(--text-color);">KT 재약정 예상 혜택 비교 요청</h3>
+
+                            <div class="form-group">
+                                <label for="customer-name">고객 성함</label>
+                                <input type="text" id="customer-name" placeholder="홍길동" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">연락처</label>
+                                <input type="tel" id="contact-phone" placeholder="010-1234-5678" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="current-carrier">현재 이용 중인 통신사 (KT 재약정 선택 시)</label>
+                                <select id="current-carrier" required>
+                                    <option value="kt">KT (재약정 대상)</option>
+                                    <option value="skt">SKT</option>
+                                    <option value="lg">LG U+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="recontract-date">약정 만료 예정일</label>
+                                <input type="date" id="recontract-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile-combine">KT 모바일 결합 상품 이용 여부</label>
+                                <select id="mobile-combine" required>
+                                    <option value="yes">예 (프리미엄 가족 결합 등)</option>
+                                    <option value="no">아니오</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="internet-speed">희망 인터넷 속도</label>
+                                <select id="internet-speed" required>
+                                    <option value="100m">100M 광랜 (평균)</option>
+                                    <option value="500m">500M 기가라이트</option>
+                                    <option value="1g">1G 기가</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tv-package">희망 TV 상품 (AI TV, 베이직, 라이브 등)</label>
+                                <input type="text" id="tv-package" placeholder="예: KT AI TV 스탠다드" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">설치 희망 지역</label>
+                                <select id="address" required>
+                                    <option value="">지역 선택</option>
+                                    <option value="seoul">서울</option>
+                                    <option value="busan">부산</option>
+                                    <option value="daegu">대구</option>
+                                    <option value="incheon">인천</option>
+                                    <option value="gwangju">광주</option>
+                                    <option value="daejeon">대전</option>
+                                    <option value="ulsan">울산</option>
+                                    <option value="suwon">경기 수원</option>
+                                    <option value="seongnam">경기 성남</option>
+                                    <option value="yongin">경기 용인</option>
+                                    <option value="goyang">경기 고양</option>
+                                    <option value="changwon">경남 창원</option>
+                                    <option value="cheonan">충남 천안</option>
+                                    <option value="cheongju">충북 청주</option>
+                                    <option value="jeonju">전북 전주</option>
+                                    <option value="pohang">경북 포항</option>
+                                    <option value="wonju">강원 원주</option>
+                                    <option value="jeju">제주</option>
+                                    <!-- 30개 이상 키워드 확보를 위한 지역명 추가 -->
+                                    <option value="sejong">세종</option>
+                                    <option value="gimpo">경기 김포</option>
+                                    <option value="hanam">경기 하남</option>
+                                    <option value="pyeongtaek">경기 평택</option>
+                                    <option value="ansan">경기 안산</option>
+                                    <option value="gumi">경북 구미</option>
+                                    <option value="gimhae">경남 김해</option>
+                                    <option value="jinju">경남 진주</option>
+                                    <option value="mokpo">전남 목포</option>
+                                    <option value="suncheon">전남 순천</option>
+                                    <option value="chuncheon">강원 춘천</option>
+                                    <option value="jecheon">충북 제천</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="cta-btn">재약정 최저가 견적 비교 요청</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Section 5: AI 및 연관 키워드, 외부 사이트 -->
+            <section class="content-section">
+                <div class="container">
+                    <h2>연관 키워드 분석 및 신뢰성 있는 정보 출처</h2>
+                    <p>KT 재약정을 검색하는 사용자들은 <span class="highlight">현금 지원금</span> 외에도 다양한 정보를 원합니다. <span class="highlight">AI 기반</span> 서비스의 발전으로 <span class="highlight">KT AI TV</span> 요금제나 <span class="highlight">AI 스피커</span> 결합 상품에 대한 관심도 높습니다. <span class="highlight">네이버</span>, <span class="highlight">구글</span>, <span class="highlight">유튜브</span> 등 다양한 플랫폼에서 <span class="highlight">KT 재약정 후기</span>, <span class="highlight">KT 혜택 비교</span> <span class="highlight">전문 업체</span> <span class="highlight">순위</span> 등의 키워드가 활발하게 검색되고 있습니다. 이는 소비자들이 <span class="highlight">저렴한 곳</span>을 찾기 위해 <span class="highlight">발품</span>을 파는 경향이 강하다는 것을 보여줍니다.</p>
+
+                    <h3 id="외부링크">신뢰성 있는 외부 사이트 참조</h3>
+                    <p>통신사 정책 및 소비자 보호 규정은 정부 기관의 정보를 통해 확인하는 것이 가장 정확합니다.</p>
+                    <ul>
+                        <li><a href="https://www.kt.com/" target="_blank" class="link-source">KT 공식 웹사이트: 상품, 요금제 및 공식 이벤트 정보</a></li>
+                        <li><a href="https://www.kcc.go.kr/" target="_blank" class="link-source">방송통신위원회: 통신 서비스 관련 정책 및 위반 사례 안내</a></li>
+                        <li><a href="https://www.fcc.or.kr/" target="_blank" class="link-source">한국통신사업자연합회(KTOA): 통신사 가입자 현황 및 보조금 지급 가이드라인</a></li>
+                        <li><a href="https://www.fss.or.kr/" target="_blank" class="link-source">금융감독원: 통신사 제휴 카드 및 금융 상품 안내</a></li>
+                        <li><a href="https://namu.wiki/w/KT" target="_blank" class="link-source">나무위키: KT 관련 서비스 및 역사 정보 (사용자 참여 정보)</a></li>
+                    </ul>
+
+                    <h3 id="키워드리스트">함께 많이 찾는 키워드 (네이버 연관 검색어)</h3>
+                    <p>사용자들이 재약정 시 함께 검색하는 주요 키워드입니다. 이 키워드들을 통해 <span class="highlight">재약정</span>의 <span class="highlight">장점</span>과 <span class="highlight">단점</span>을 깊이 있게 비교할 수 있습니다.</p>
+                    <ul class="keyword-list">
+                        <li>#KT 인터넷 재약정 현금지원</li>
+                        <li>#KT 재약정 혜택</li>
+                        <li>#KT 인터넷 신규가입 사은품</li>
+                        <li>#KT 재약정 vs 신규가입 차이점</li>
+                        <li>#KT 인터넷 갱신 할인</li>
+                        <li>#KT AI TV 요금제</li>
+                        <li>#SKT LG 재약정 비교</li>
+                        <li>#인터넷 가입 업체 추천 순위</li>
+                        <li>#인터넷 재약정 현금 지원금 평균</li>
+                        <li>#KT 인터넷TV 해지 위약금</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- FAQ 섹션 -->
+            <section id="faq" class="content-section">
+                <div class="container">
+                    <h2>자주 묻는 질문 (FAQ)</h2>
+                    <div class="faq-item">
+                        <h3 id="q1">KT 재약정 시 요금제 변경이 가능한가요?</h3>
+                        <p>네, 재약정 시 요금제를 변경할 수 있습니다. 예를 들어, 기존 100M 광랜 요금제에서 500M 기가라이트 또는 1G 기가 요금제로 업그레이드할 수 있습니다. 요금제를 업그레이드하면 재약정 시 현금 지원금이나 할인율이 더 높아질 수 있습니다. 2026년에는 AI 기술이 접목된 TV 요금제도 다양하게 출시되어 선택의 폭이 넓어졌습니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 id="q2">KT 재약정 시 현금 지원을 많이 받는 비결은 무엇인가요?</h3>
+                        <p>재약정 시 현금 지원을 많이 받는 비결은 모바일 결합 상품을 유지하고, 필요하다면 요금제를 업그레이드하여 재약정을 진행하는 것입니다. 또한, KT 본사보다 온라인 전문 업체를 통해 재약정 견적을 비교하는 것이 유리한 경우가 많습니다. 온라인 <span class="highlight">전문 업체</span>들은 <span class="highlight">경쟁</span> 심화로 인해 <span class="highlight">현금 지원금</span>을 더 높게 책정하는 경향이 있습니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 id="q3">KT 재약정 시 기존 모바일 결합 할인이 사라지나요?</h3>
+                        <p>아닙니다. KT 재약정은 기존에 이용하던 모바일 결합 할인을 유지하는 것을 전제로 진행됩니다. 따라서 재약정을 통해 기존 할인 혜택을 그대로 유지하면서 추가적인 혜택을 받을 수 있습니다. 만약 신규 가입을 위해 타사로 이동하면 이 할인 혜택은 사라지므로, 모바일 결합 할인이 큰 고객은 재약정이 유리할 수 있습니다.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 id="q4">재약정 만료 3개월 전부터 혜택을 받을 수 있나요?</h3>
+                        <p>네, 통신사별 정책에 따라 약정 만료 3개월 전부터 재약정 상담 및 혜택 적용이 가능합니다. 혜택은 재약정 시점에 따라 달라질 수 있으므로, 만료 시점이 다가오면 미리 상담을 받는 것이 좋습니다. <span class="highlight">2026년</span>에는 재약정 <span class="highlight">이벤트</span> 기간이 길어지는 추세입니다.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- JavaScript for enhanced user experience (FAQ toggle) -->
+        <script>
+            document.querySelectorAll('.faq-item h3').forEach(item => {
+                item.addEventListener('click', event => {
+                    const parent = item.parentElement;
+                    const content = parent.querySelector('p');
+
+                    // Close other open items
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+                        if (otherItem !== parent && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('p').style.display = 'none';
+                        }
+                    });
+
+                    // Toggle current item
+                    parent.classList.toggle('active');
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        </script>
+
+      
